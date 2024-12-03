@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Counter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000000;
+            color: white;
+        }
+        .circle {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-color: rgb(163, 211, 227);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6rem;
+            color: black;
+            cursor: pointer;
+            user-select: none;
+        }
+        .button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px 40px;
+            font-size: 2rem;
+            cursor: pointer;
+            background-color: #000000;
+            color: rgb(0, 0, 0);
+            border: #ed0000;;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(233, 230, 230, 0.2);
+        }
+        .button:hover {
+            background-color: #ffffff;
+        }
+        .button-left {
+            left: 20px;
+        }
+        .button-right {
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Increment and Decrement Buttons -->
+    <button class="button button-left" onclick="decrementCounter()">-1</button>
+    <button class="button button-right" onclick="incrementCounter()">+1</button>
+
+    <!-- Main Circle -->
+    <div class="circle" onclick="incrementCounter()">0</div>
+
+    <script>
+        let counter = 0;
+
+        // Function to increment the counter
+        function incrementCounter() {
+            counter++;
+            updateCounterDisplay();
+        }
+
+        // Function to decrement the counter
+        function decrementCounter() {
+            counter--;
+            updateCounterDisplay();
+        }
+
+        // Function to update the displayed counter value
+        function updateCounterDisplay() {
+            document.querySelector('.circle').innerText = counter;
+        }
+    </script>
+</body>
+</html>
